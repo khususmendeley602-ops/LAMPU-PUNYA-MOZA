@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Lampu On Off</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .lampu {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #666;
+            margin: 20px auto;
+            transition: 0.3s;
+        }
+
+        .on {
+            background: #ffe600;
+            box-shadow: 0 0 25px #ffe600;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #4f46e5;
+            color: white;
+            font-size: 14px;
+        }
+
+        p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Kontrol Lampu</h2>
+    <div id="lampu" class="lampu"></div>
+    <button onclick="toggleLampu()">Klik Saklar</button>
+    <p id="status">Lampu Mati</p>
+</div>
+
+<script>
+    let nyala = false;
+
+    function toggleLampu() {
+        const lampu = document.getElementById("lampu");
+        const status = document.getElementById("status");
+
+        nyala = !nyala;
+
+        if (nyala) {
+            lampu.classList.add("on");
+            status.innerText = "Lampu Menyala";
+        } else {
+            lampu.classList.remove("on");
+            status.innerText = "Lampu Mati";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+S
